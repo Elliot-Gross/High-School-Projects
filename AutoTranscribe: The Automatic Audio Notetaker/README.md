@@ -18,9 +18,9 @@ The application requires the following dependencies:
 
 These dependencies can be installed via pip:
 
-\`\`\`bash
+''' bash
 pip install openai pydub tkinter python-dotenv
-\`\`\`
+'''
 
 Additionally, an OpenAI API key is necessary to use the application. After obtaining the key, replace `your_key` in the `.env` file:
 
