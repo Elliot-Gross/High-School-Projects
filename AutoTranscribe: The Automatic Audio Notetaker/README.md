@@ -1,6 +1,6 @@
 # AutoTranscribe: The Automatic Audio Notetaker
 
-This project is a simple yet powerful application designed to transcribe and summarize audio files. The application is a valuable tool aimed to aid students and teachers in generating efficient, organized notes without the hassle of manual typing. It leverages the OpenAI API for transcribing audio, which is subsequently summarized based on custom prompts. The resulting transcription summary can be conveniently downloaded as a markdown file. The user-friendly GUI of the application is designed using Tkinter.
+This project is a simple yet powerful application designed to transcribe and summarize audio files. The application is a valuable tool aimed to aid students and teachers in generating efficient, organized notes without the hassle of manual typing. It leverages the OpenAI API for transcribing audio, which is subsequently summarized based on custom prompts. The resulting transcription summary can be conveniently downloaded as a markdown file. The user-friendly GUI of the application is designed using Tkinter. The summarized notes are output in the Markdown format to ensure well-structured, visually appealing presentation.
 
 ## Getting Started
 
@@ -18,37 +18,37 @@ The application requires the following dependencies:
 
 These dependencies can be installed via pip:
 
-''' bash
+``` bash
 pip install openai pydub tkinter python-dotenv
-'''
+```
 
-Additionally, an OpenAI API key is necessary to use the application. After obtaining the key, replace `your_key` in the `.env` file:
+Additionally, an OpenAI API key is necessary to use the application. After obtaining the key, replace `YOUR API KEY` in the `.env` file:
 
 ```plaintext
-OPENAI_API_KEY = your_key
+OPENAI_API_KEY = YOUR API KEY
 ```
 
 ### Installation
 
 Clone the repository to your local machine:
 
-\`\`\`bash
+``` bash
 git clone https://github.com/yourusername/audiosummarizer.git
-\`\`\`
+```
 
 Then, navigate to the `src` directory:
 
-\`\`\`bash
+``` bash
 cd audiosummarizer/src
-\`\`\`
+```
 
 ### Running the Application
 
 To run the application, execute the following command:
 
-\`\`\`bash
+``` bash
 python main.py
-\`\`\`
+```
 
 If you've made `main.py` executable, you can run it by simply double-clicking the file.
 
