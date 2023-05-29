@@ -24,9 +24,9 @@ pip install openai pydub tkinter python-dotenv
 
 Additionally, an OpenAI API key is necessary to use the application. After obtaining the key, replace `your_key` in the `.env` file:
 
-\`\`\`plaintext
+```plaintext
 OPENAI_API_KEY = your_key
-\`\`\`
+```
 
 ### Installation
 
