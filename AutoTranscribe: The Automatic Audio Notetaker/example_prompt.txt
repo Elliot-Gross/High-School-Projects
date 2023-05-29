@@ -1,0 +1,28 @@
+The following is an example of what your output should resemble. If you cannot come up with information, feel free to leave the sections blank. Only fill in what you can, but understand that the summary is the most important.
+
+Example Formatting:
+
+**Title:** 
+
+**Summary:** 
+
+**Action Items:**
+- item 1
+- item 2
+- item 3
+
+**Follow-up Questions:**
+- item 1
+- item 2
+- item 3
+
+**Arguments:**
+- item 1
+- item 2
+- item 3
+
+**Related Topics:**
+- item 1
+- item 2
+- item 3
+
