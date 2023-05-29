@@ -1,6 +1,4 @@
-#!/usr/bin/env python3
-
-from tkinter import Tk, Button, filedialog
+from tkinter import Tk, Button, filedialog, Label
 from pydub import AudioSegment
 from dotenv import load_dotenv
 import openai
@@ -18,12 +16,11 @@ window = Tk()
 window.title("Transcribe and Summarize Your Audio Files")
 
 selected_file_path = None
-transcribed = False
 summarized_text = None
 
 def browse_file():
     global selected_file_path
-    global transcribed
+    global summarized_text
 
     filetypes = [
         ("Audio Files", "*.m4a;*.wav;*.mp3"),
@@ -36,19 +33,17 @@ def browse_file():
 
 
     if selected_file_path:
-        transcribed = False
         transcribe_button.config(state="normal")
         transcribe_button.config(text="Transcribe")
+        file_label.config(text="File: " + selected_file_path)
+        summarized_text = None
     else:
         transcribe_button.config(state="disabled")
     
     download_button.config(state="disabled")
 
 def transcribe():
-    global transcribed
     global summarized_text
-
-    transcribed = True
         
     audio_file= open(selected_file_path, "rb")
     transcript = openai.Audio.transcribe("whisper-1", audio_file)['text']
@@ -60,15 +55,17 @@ def transcribe():
     download_button.config(state="normal")
 
 def download_notes():
-    
-    notes_file_name = os.path.splitext(selected_file_path)[0] + " Notes"
-    default_filename = os.path.basename(notes_file_name)
-        
-    save_path = filedialog.asksaveasfilename(defaultextension=".md", initialfile=default_filename)
+    if summarized_text:
+        notes_file_name = os.path.splitext(selected_file_path)[0] + " Notes"
+        default_filename = os.path.basename(notes_file_name)
+            
+        save_path = filedialog.asksaveasfilename(defaultextension=".md", initialfile=default_filename)
 
-    if save_path:
-        with open(save_path, 'w') as f: f.write(summarized_text)
+        if save_path:
+            with open(save_path, 'w') as f: f.write(summarized_text)
         else: print("No save location selected!")
+    else:
+        download_label.config(text="No summarized text available!")
 
 def generate_summarized_text(transcript):
     
@@ -115,5 +112,11 @@ transcribe_button.pack()
 
 download_button = Button(window, text="Download Notes", command=download_notes, state="disabled")
 download_button.pack()
+
+file_label = Label(window, text="No file selected")
+file_label.pack()
+
+download_label = Label(window, text="")
+download_label.pack()
 
 window.mainloop()
