@@ -30,19 +30,11 @@ OPENAI_API_KEY = YOUR API KEY
 
 ### Installation
 
-Clone the repository to your local machine:
-
-``` bash
-git clone https://github.com/yourusername/audiosummarizer.git
-```
-
-Then, navigate to the `src` directory:
-
-``` bash
-cd audiosummarizer/src
-```
+Clone the repository to your local machine, or download the individual files.
 
 ### Running the Application
+
+First, navigate to the directory where main.py is located.
 
 To run the application, execute the following command:
 
